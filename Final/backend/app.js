@@ -9,14 +9,12 @@ app.use(express.json());
 app.use("/api/user", router);
 app.use("/api/blog", blogRouter);
 
-mongoose.
-    connect('mongodb+srv://admin:MzRg7CEiyciPXagn@cluster0.exbqbyt.mongodb.net/BlogDb?retryWrites=true&w=majority')
-    .then(() => app.listen(8000)).
-    then(() => 
-    console.log("Connected to Database and Listening on 8000"))
-    .catch((err) => console.log(err));
-
+mongoose
+  .connect(
+    "mongodb+srv://admin:MzRg7CEiyciPXagn@cluster0.exbqbyt.mongodb.net/BlogDb?retryWrites=true&w=majority"
+  )
+  .then(() => app.listen(8000))
+  .then(() => console.log("Connected to Database and Listening on 8000"))
+  .catch((err) => console.log(err));
 
 app.listen(5000);
-
-
